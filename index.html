@@ -12,29 +12,54 @@
   </head>
   <body>
     <header>
-      <nav class="header-menu">
+      <nav>
         <ul>
-          <a href=""
-            ><img
+          <a href="#" id="Riotlogo">
+            <img
               src="images/riot-games-rgb-logos-web/Riot Games RGB Logos (Web)/002_RG 2021 Full Lockup/002_RG_2021_FULL_LOCKUP_OFFWHITE.png"
               alt="Riotlogo"
               width="85"
-              id="Riotlogo"
-          /></a>
-          <a href="" id="logo2xko"
+              id="RiotlogoWhite"
+            />
+            <img
+              src="images/riot-games-rgb-logos-web/Riot Games RGB Logos (Web)/002_RG 2021 Full Lockup/002_RG_2021_FULL_LOCKUP_RED.png"
+              alt="Riotlogo"
+              width="85"
+              id="RiotlogoRed"
+            />
+          </a>
+          <a href="#" id="logo2xko"
             ><img src="images/2XKOlogo.png" alt="2XKOlogo" width="30"
           /></a>
-          <li><a href="">ข่าวสาร</a></li>
-          <li><a href="">แชมเปี้ยน</a></li>
-          <li><a href="">COMPETITIVE</a></li>
+          <li>
+            <a href="#">ข่าวสาร</a>
+            <div class="underline"></div>
+          </li>
+          <li>
+            <a href="#">แชมเปี้ยน</a>
+            <div class="underline"></div>
+          </li>
+          <li class="nav-item">
+            <a href="#">COMPETITIVE</a>
+            <!-- <div class="underline"></div> -->
+            <ul class="dropdown">
+              <li><a href="#">ซีรี่ส์การแข่งขันปี 2026</a></li>
+              <li><a href="#">แนวทางการแข่งขันในคอมมูนิตี้ 2XKO</a></li>
+              <li><a href="#">ทัวร์นาเมนต์ในคอมมูนิตี้</a></li>
+            </ul>
+          </li>
         </ul>
         <ul id="header-menu-last">
           <li>
-            <a href=""
-              ><img src="images/globalicon.png" alt="globalIcon" width="17px"
+            <a href="#" id="globalicon"
+              ><img
+                src="images/globalicon.png"
+                alt="globalIcon"
+                width="16px"
+                height="16px"
             /></a>
           </li>
-          <li><a href="" id="sign-in">ลงชื่อใช้</a></li>
+          <li><a href="#" id="sign-in">ลงชื่อใช้</a></li>
         </ul>
       </nav>
     </header>
@@ -48,10 +73,27 @@
       <div class="top-content">
         <img src="images/2xkoLogoTopContent.png" alt="2xkoLogo" />
         <h1>2XKO - เกมต่อสู้เน้นเล่นเป็นทีมแบบ 2V2</h1>
-        <a href="" class="cta" id="cta-top-content"
+        <a href="#" class="cta" id="cta-top-content"
           ><span>เล่นได้แบบฟรีๆ</span></a
         >
       </div>
+      <div class="infoplatform">
+        <p>
+          เล่นได้แล้วทั้งบน PC, เครื่องคอนโซล XBOX SERIES X|S และ PLAYSTATION®5
+        </p>
+        <div class="logoplatfrom">
+          <a href=""
+            ><img src="images/platformlogo/PClogo.avif" alt="PC Platform" /></a
+          ><a href=""
+            ><img
+              src="images/platformlogo/Xboxlogo.avif"
+              alt="Xbox platform" /></a
+          ><a href=""
+            ><img src="images/platformlogo/PS5logo.avif" alt="PS5 platform"
+          /></a>
+        </div>
+      </div>
     </section>
+    <div class="top-logo"></div>
   </body>
 </html>

@@ -1,8 +1,47 @@
-@import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Prompt:wght@400;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Prompt:wght@400;900&display=swap');
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+/* Header-Section */
+
+header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111111;
+  height: 80px;
+  font-family: 'Noto Sans TH', Tahoma, sans-serif;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: 0.08em;
+  font-size: 13px;
+  width: 100%;
+  z-index: 100;
+}
+/* Nav-bar */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 30px;
+}
+nav > ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  justify-content: space-around;
+  width: 500px;
+}
+nav ul li {
+  position: relative;
+}
+nav ul li:hover .underline {
+  width: 100%;
 }
 nav ul li a {
   color: white;
@@ -10,19 +49,22 @@ nav ul li a {
   padding: 7.5px 16px;
   border-radius: 10px;
 }
-.header-menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 0 30px;
+nav ul li a:hover {
+  background-color: #333333;
+  color: #1f1d1f;
+  transition: 0.5s;
 }
-nav ul {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  justify-content: space-around;
-  width: 500px;
+.underline {
+  position: absolute;
+
+  left: 0;
+  bottom: -25px;
+
+  width: 0%;
+  height: 4px;
+
+  border-radius: 2px;
+  background: #1affce;
 }
 
 #header-menu-last {
@@ -33,55 +75,113 @@ nav ul {
   margin: 0 30px;
 }
 #sign-in {
+  margin-left: 10px;
   background-color: #282828;
 }
-header {
-  position: fixed;
+#globalicon {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  background-color: #111111;
-  height: 80px;
-  font-family: "Noto Sans TH", Tahoma, sans-serif;
-  font-weight: 600;
-  line-height: 120%;
-  letter-spacing: 0.08em;
-  font-size: 13px;
-  width: 100%;
-  z-index: 1;
+  padding: 7.5px;
+}
+#Riotlogo {
+  position: relative;
+  width: 100px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#Riotlogo img {
+  position: absolute;
+  transition: opacity 0.3s;
+}
+#RiotlogoRed {
+  opacity: 0;
+}
+#Riotlogo:hover #RiotlogoRed {
+  opacity: 1;
+}
+#Riotlogo:hover #RiotlogoWhite {
+  opacity: 0;
+}
+.nav-item {
+  position: relative;
 }
 
+.dropdown {
+  display: none;
+
+  position: absolute;
+  top: 48px;
+  left: 0;
+
+  width: 250px;
+  padding: 20px 0;
+
+  background-color: #2b2b2b;
+  list-style: none;
+  z-index: 999;
+}
+
+.nav-item:hover .dropdown {
+  display: block;
+}
+
+.dropdown li {
+  width: 100%;
+}
+
+.dropdown li a {
+  display: block;
+  padding: 14px 32px;
+
+  color: #ccc;
+  background: transparent;
+  border-radius: 0;
+  text-decoration: none;
+}
+
+.dropdown li a:hover {
+  color: white;
+  background-color: #3a3a3a;
+}
+
+/* Top-content Section */
 .hero {
-  position: relative; /* ทำตัวเป็นกรอบอ้างอิงให้ video ที่ absolute */
+  position: relative;
   min-height: 600px;
   height: 100vh;
   overflow: hidden;
-}
 
-.main-video {
-  position: absolute; /* ดึงออกจาก flow → ทำตัวเป็น background */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* เติมเต็มกรอบโดยไม่บิด */
-  z-index: 0;
-}
-
-.top-content {
-  position: relative; /* อยู่ใน flow ปกติ แต่ z-index สูงกว่า */
-  z-index: 1;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: "Noto Sans TH", Tahoma, sans-serif;
-  margin-top: -120px;
+}
+
+.main-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.top-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Noto Sans TH', Tahoma, sans-serif;
+  margin-top: 0%;
 }
 .top-content h1 {
   color: white;
-  font-family: "Prompt", "Noto Sans TH", Tahoma, sans-serif;
+  font-family: 'Prompt', 'Noto Sans TH', Tahoma, sans-serif;
   font-weight: 900;
   font-style: normal;
   font-size: 16px;
@@ -92,21 +192,66 @@ header {
   height: auto;
 }
 .cta {
+  display: flex;
+  align-items: center;
   background-color: #1b1d1f;
   color: white;
   text-decoration: none;
-  padding: 14px 24px;
+  height: 64px;
+  padding: 0px 24px;
   font-weight: 400;
   font-style: normal;
   font-size: 18px;
   transform: skew(-15deg);
-  border: 5px solid white;
+  border: 4px solid white;
 
   font-family:
     Google Sans,
     sans-serif;
 }
+
 .cta span {
   display: inline-block;
   transform: skew(15deg);
+}
+.cta:hover {
+  background-color: #cdf564;
+  color: #272b23;
+  transition: 0.5s;
+}
+.infoplatform {
+  position: relative;
+  z-index: 10;
+  display: flex;
+
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  z-index: 10;
+  color: white;
+  gap: 30px;
+  margin-top: 40px;
+  text-align: center;
+}
+.infoplatform p {
+  font-size: 18px;
+  font-family:
+    Google Sans,
+    'Noto Sans TH',
+    Tahoma,
+    sans-serif;
+  font-weight: bold;
+  width: 500px;
+  text-align: center;
+}
+.logoplatfrom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin-top: 16px;
+}
+.logoplatfrom img {
+  height: 24px;
+  width: auto;
 }
