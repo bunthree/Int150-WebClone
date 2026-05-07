@@ -40,7 +40,8 @@ nav > ul {
 nav ul li {
   position: relative;
 }
-nav ul li:hover .underline {
+nav ul li:hover .underline,
+nav ul li:hover .underline-COMPETITIVE {
   width: 100%;
 }
 nav ul li a {
@@ -59,6 +60,18 @@ nav ul li a:hover {
 
   left: 0;
   bottom: -25px;
+
+  width: 0%;
+  height: 4px;
+
+  border-radius: 2px;
+  background: #1affce;
+}
+.underline-COMPETITIVE {
+  position: absolute;
+
+  left: 0;
+  top: -5px;
 
   width: 0%;
   height: 4px;
@@ -113,10 +126,10 @@ nav ul li a:hover {
   display: none;
 
   position: absolute;
-  top: 48px;
+  top: 43px;
   left: 0;
 
-  width: 250px;
+  width: 200px;
   padding: 20px 0;
 
   background-color: #2b2b2b;
