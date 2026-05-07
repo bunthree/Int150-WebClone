@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Prompt:wght@400;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Prompt:wght@400;900&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,7 +13,7 @@ header {
   align-items: center;
   background-color: #111111;
   height: 80px;
-  font-family: 'Noto Sans TH', Tahoma, sans-serif;
+  font-family: "Noto Sans TH", Tahoma, sans-serif;
   font-weight: 600;
   line-height: 120%;
   letter-spacing: 0.08em;
@@ -151,11 +151,11 @@ nav ul li a:hover {
 .hero {
   position: relative;
   min-height: 600px;
-  height: 100vh;
+  height: 86.5vh;
   overflow: hidden;
-
   display: flex;
   flex-direction: column;
+
   justify-content: center;
   align-items: center;
 }
@@ -176,12 +176,13 @@ nav ul li a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: 'Noto Sans TH', Tahoma, sans-serif;
-  margin-top: 0%;
+  font-family: "Noto Sans TH", Tahoma, sans-serif;
+  margin-bottom: 100px;
 }
+
 .top-content h1 {
   color: white;
-  font-family: 'Prompt', 'Noto Sans TH', Tahoma, sans-serif;
+  font-family: "Prompt", "Noto Sans TH", Tahoma, sans-serif;
   font-weight: 900;
   font-style: normal;
   font-size: 16px;
@@ -220,24 +221,23 @@ nav ul li a:hover {
   transition: 0.5s;
 }
 .infoplatform {
-  position: relative;
+  position: absolute;
   z-index: 10;
   display: flex;
-
   flex-direction: column;
-  justify-self: center;
   align-items: center;
   z-index: 10;
   color: white;
-  gap: 30px;
-  margin-top: 40px;
+  gap: 20px;
   text-align: center;
+  margin-top: auto;
+  bottom: 60px;
 }
 .infoplatform p {
-  font-size: 18px;
+  font-size: 20px;
   font-family:
     Google Sans,
-    'Noto Sans TH',
+    "Noto Sans TH",
     Tahoma,
     sans-serif;
   font-weight: bold;
@@ -248,10 +248,31 @@ nav ul li a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 50px;
   margin-top: 16px;
 }
 .logoplatfrom img {
-  height: 24px;
+  height: 32px;
   width: auto;
+}
+.about {
+  height: 50vh;
+  background-color: #1b1d1f;
+  padding: 30px;
+}
+.about h2 {
+  font-family: "Prompt", "Noto Sans TH", Tahoma, sans-serif;
+  font-size: 48px;
+  text-align: center;
+  color: white;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, #1b1d1f 0%, transparent 100%) center
+    bottom / 100% 50% no-repeat;
+  z-index: 0;
+  pointer-events: none;
 }
