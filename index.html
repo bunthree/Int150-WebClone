@@ -148,5 +148,155 @@
         <button>รับชมเลย</button>
       </div>
     </secton>
+    <section class="news">
+      <div class="news-header">
+        <h2>ข่าวสารที่น่าสนใจ</h2>
+        <a href="#" class="see-all">ดูทั้งหมด <span>↗</span></a>
+      </div>
+      <div class="info-news">
+        <a href="#" class="new">
+          <!-- เปลี่ยน div → a (การ์ดทั้งใบคลิกได้) -->
+          <div class="new-image">
+            <img src="images/news/DaruisRun.avif" alt="" />
+            <div class="play-icon">▶</div>
+            <!-- ปุ่ม play overlay -->
+          </div>
+          <p class="meta">ประกาศ <span>|</span> 7/5/2569</p>
+          <h3>Fuse ใหม่: Teamfight</h3>
+          <p class="desc">
+            มาดู Fuse ใหม่ของเรา: Teamfight ชวนเพื่อนมาเล่น 2v2
+            ในแบบที่ไม่เคยมาก่อน วันที่ 12 พฤษภาคมนี้เลย
+          </p>
+        </a>
+        <a href="#" class="new">
+          <div class="new-image">
+            <img src="images/news/Akali.avif" alt="" />
+            <div class="play-icon">▶</div>
+          </div>
+          <p class="meta">การอัปเดตเกม <span>|</span> 30/4/2069</p>
+          <h3>เมกาบันเดิล Blood Moon พร้อมให้เป็นเจ้าของแล้ว</h3>
+          <p class="desc">
+            ปลดปล่อยปีศาจร้ายภายในตัวคุณ เมกาบันเดิล Blood Moon
+            เป็นเจ้าของได้แล้ว
+          </p>
+        </a>
+
+        <a href="#" class="new">
+          <div class="new-image">
+            <img src="images/news/Evo.avif" alt="" />
+          </div>
+          <p class="meta">คอมมูนิตี้ <span>|</span> 28/4/2569</p>
+          <h3>รู้ไว้ก่อนไป: 2XKO @ Evo Japan 2026</h3>
+          <p class="desc">
+            Evo Japan 2026 จะเริ่มขึ้นในวันที่ 1 พฤษภาคม
+            นี่คือทุกเรื่องที่ึคุณจำเป็นต้องรู้เกี่ยวกับ 2XKO ที่อีเวนต์
+          </p>
+        </a>
+      </div>
+    </section>
+    <section class="features">
+      <h3>ฟีเจอร์</h3>
+
+      <div class="features-tabs">
+        <!-- 5 radio inputs (ซ่อน) -->
+        <input type="radio" name="tab" id="tab1" checked />
+        <input type="radio" name="tab" id="tab2" />
+        <input type="radio" name="tab" id="tab3" />
+        <input type="radio" name="tab" id="tab4" />
+        <input type="radio" name="tab" id="tab5" />
+
+        <!-- รูปใหญ่ของแต่ละ tab -->
+        <div class="big-images">
+          <img
+            src="images/features/Battle2V2.avif"
+            class="big-img"
+            data-tab="1"
+          />
+          <img src="images/features/Fuse.avif" class="big-img" data-tab="2" />
+          <img src="images/features/lobby.avif" class="big-img" data-tab="3" />
+          <img
+            src="images/features/Freetoplay.avif"
+            class="big-img"
+            data-tab="4"
+          />
+          <img
+            src="images/features/integity.avif"
+            class="big-img"
+            data-tab="5"
+          />
+        </div>
+
+        <!-- ปุ่ม thumbnails -->
+        <div class="thumbs">
+          <label for="tab1"
+            ><img src="images/features/Battle2V2.avif" /><span
+              >ระบบต่อสู้ 2v2</span
+            ></label
+          >
+          <label for="tab2"
+            ><img src="images/features/Fuse.avif" /><span>FUSE</span></label
+          >
+          <label for="tab3"
+            ><img src="images/features/lobby.avif" /><span>ล็อบบี้</span></label
+          >
+          <label for="tab4"
+            ><img src="images/features/Freetoplay.avif" /><span
+              >เล่นได้ฟรี</span
+            ></label
+          >
+          <label for="tab5"
+            ><img src="images/features/integity.avif" /><span
+              >ความโปร่งใสของการแข่งขัน</span
+            ></label
+          >
+        </div>
+
+        <!-- ข้อความใต้ภาพ -->
+        <div class="descs">
+          <div class="desc" data-tab="1">
+            <h4>ระบบต่อสู้ 2v2</h4>
+            <p>
+              2XKO คือเกมต่อสู้ 2v2
+              ที่ซึ่งทีมเวิร์คชั้นยอดคือตัวตัดสินระหว่างชัยชนะและความพ่ายแพ้
+              ฝึกฝนกลไกแท็กและแอสซิสสุดพิเศษให้เชี่ยวชาญเพื่อชิงชัยเหนือคู่หูศัตรูและคว้าจุดสูงสุดมาให้จงได้
+            </p>
+          </div>
+          <div class="desc" data-tab="2">
+            <h4>FUSE</h4>
+            <p>
+              Fuse คือระบบเสริมสไตล์การเล่นแสนทรงพลัง
+              ซึ่งสามารถเปลี่ยนกฎการเล่นของทีมคุณได้เลย
+              ไม่ว่าคุณจะเป็นนักสู้แท็กมือใหม่หรือผู้เข้าแข่งขันเจนสนาม เราก็มี
+              Fuse เตรียมไว้ให้อย่างแน่นอน
+            </p>
+          </div>
+          <div class="desc" data-tab="3">
+            <h4>ล็อบบี้</h4>
+            <p>
+              ก้าวเข้าสู่ตู้เกมเสมือนที่ซึ่งคู่หูคนต่อไป
+              หรือไม่ก็คู่ปรับกำลังรอคุณอยู่ ล็อบบี้เกมจัดอันดับ เกมทั่วไป
+              และเกมส่วนตัวเปิดโอกาสให้คุณได้เล่นในแบบของตัวเอง
+              ไม่ว่าจะอยากแข่งขัน รับชม หรือแค่อยากรัวปุ่มให้มันส์ไปข้าง
+            </p>
+          </div>
+          <div class="desc" data-tab="4">
+            <h4>เล่นได้ฟรี</h4>
+            <p>
+              ปลดล็อกแชมเปี้ยนใหม่ รับแชมเปี้ยนมาสเตอรี่
+              และปลดล็อกของรางวัลแบทเทิลพาสแบบฟรี ๆ คุณสามารถแลก Coin
+              เพื่อรับไอเทมเพิ่มเติมได้ แต่ไม่จำเป็นต้องเสียเงินเพื่อที่จะเล่น
+              2XKO
+            </p>
+          </div>
+          <div class="desc" data-tab="5">
+            <h4>ความโปร่งใส</h4>
+            <p>
+              2XKO มาพร้อมกับเน็ตโค้ดและระบบป้องกันการโกงขั้นสูงสุด
+              เพื่อส่งมอบเกมเพลย์ที่ทั้งยุติธรรมและไร้ซึ่งปัญหาแลคในทุกครั้งที่คุณเข้าคิว
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

@@ -390,3 +390,349 @@ nav ul li a:hover {
   color: #272b23;
   transition: 0.5s;
 }
+/* news-section*/
+.news {
+  background-color: white;
+  color: #1b1d1f;
+  padding: 80px 30px;
+  font-family: "Google Sans", "Noto Sans TH", Tahoma, sans-serif;
+}
+/* === Header bar === */
+.news-header {
+  max-width: 1400px;
+  margin: 0 auto 40px; /* ห่างจาก grid ด้านล่าง 40px */
+  display: flex;
+  justify-content: space-between; /* title ซ้าย, link ขวา */
+  align-items: center;
+}
+.news-header h2 {
+  font-family: "Prompt", "Noto Sans TH", Tahoma, sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+}
+.see-all {
+  color: #1b1d1f;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.see-all:hover {
+  color: #5a5a5a;
+  transition: 0.3s;
+}
+/* === Grid 3 คอลัมน์ === */
+.info-news {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 คอลัมน์ขนาดเท่ากัน */
+  gap: 30px;
+}
+/* === การ์ดแต่ละใบ === */
+.new {
+  text-decoration: none;
+  color: #1b1d1f;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+/* === ภาพ === */
+.new-image {
+  position: relative; /* ให้ play-icon อ้างอิงได้ */
+  overflow: hidden; /* รูปขยายตอน hover ไม่ล้น */
+  aspect-ratio: 16 / 9; /* คุมสัดส่วนภาพให้เท่ากันทุกใบ */
+}
+.new-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* เติมเต็มกรอบไม่บิด */
+  display: block;
+  transition: transform 0.4s;
+}
+.new:hover .new-image img {
+  transform: scale(1.05); /* ซูมรูปนิดๆ ตอน hover */
+}
+/* === Play button overlay === */
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(116, 116, 116, 0.6);
+  color: #ffffff;
+  border: 5px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  pointer-events: none; /* คลิกทะลุไปยังการ์ด */
+}
+/* === Text === */
+.new .meta {
+  font-size: 14px;
+  font-weight: bold;
+  color: #1b1d1f;
+  margin-top: 8px;
+}
+
+.new .meta span {
+  margin: 0 6px;
+  color: #555; /* เครื่องหมาย | สีจางลง */
+}
+
+.new h3 {
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 1.3;
+}
+
+.new .desc {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #1b1d1f;
+}
+
+/* ซ่อน radio inputs */
+.features-tabs input[type="radio"] {
+  display: none;
+}
+
+/* ซ่อนภาพใหญ่และข้อความทั้งหมดเป็นค่าเริ่มต้น */
+.big-img,
+.desc {
+  display: none;
+}
+
+/* แสดงเฉพาะตัวที่ตรงกับ radio ที่ถูกเลือก */
+#tab1:checked ~ .big-images .big-img[data-tab="1"],
+#tab1:checked ~ .descs .desc[data-tab="1"] {
+  display: block;
+}
+#tab2:checked ~ .big-images .big-img[data-tab="2"],
+#tab2:checked ~ .descs .desc[data-tab="2"] {
+  display: block;
+}
+#tab3:checked ~ .big-images .big-img[data-tab="3"],
+#tab3:checked ~ .descs .desc[data-tab="3"] {
+  display: block;
+}
+#tab4:checked ~ .big-images .big-img[data-tab="4"],
+#tab4:checked ~ .descs .desc[data-tab="4"] {
+  display: block;
+}
+#tab5:checked ~ .big-images .big-img[data-tab="5"],
+#tab5:checked ~ .descs .desc[data-tab="5"] {
+  display: block;
+}
+
+/* Layout */
+.thumbs {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.thumbs label {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.thumbs label img {
+  width: 200px;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+/* ===== Features Section ===== */
+.features {
+  background-color: white;
+  color: #1b1d1f;
+  padding: 80px 30px;
+  font-family: "Google Sans", "Noto Sans TH", Tahoma, sans-serif;
+}
+
+.features > h3 {
+  max-width: 1400px;
+  margin: 0 auto 40px;
+  font-family: "Prompt", "Noto Sans TH", Tahoma, sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.features-tabs {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* ซ่อน radio inputs */
+.features-tabs input[type="radio"] {
+  display: none;
+}
+
+/* === Big image (ภาพใหญ่ด้านบน) === */
+.big-images {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* คุมสัดส่วนภาพ */
+  overflow: hidden;
+}
+
+.big-img {
+  position: absolute; /* วางทับกัน → จะเปลี่ยนเฉพาะตัวที่ active */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0; /* ซ่อนทุกตัวเป็นค่าเริ่มต้น */
+  transition: opacity 0.4s;
+}
+
+/* === Thumbs (รูปย่อด้านล่าง) === */
+.thumbs {
+  display: flex;
+  justify-content: center; /* จัดกลางแนวนอน */
+  gap: 20px;
+
+  max-width: 1100px; /* ← เพิ่ม: แคบกว่า big-image */
+  margin: 0 auto;
+}
+
+.thumbs label {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex: 1; /* ← เปลี่ยนจาก width: 200px เป็น flex: 1 */
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.thumbs label:hover {
+  opacity: 0.8;
+}
+
+.thumbs label img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.thumbs label span {
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* === Description (ข้อความใต้รูป) === */
+.descs {
+  margin-top: 20px;
+  padding-top: 30px;
+  border-top: 1px solid #333; /* เส้นคั่นเหมือนต้นฉบับ */
+  margin: 20px auto 0;
+  max-width: 1100px;
+}
+
+.desc {
+  display: none; /* ซ่อนทุกตัวเป็นค่าเริ่มต้น */
+}
+
+.desc h4 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.desc p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #1b1d1f;
+}
+
+/* ===== State: เมื่อ radio ถูกเลือก ===== */
+/* tab 1 */
+#tab1:checked ~ .big-images .big-img[data-tab="1"] {
+  opacity: 1;
+}
+#tab1:checked ~ .thumbs label[for="tab1"] {
+  opacity: 1;
+}
+#tab1:checked ~ .thumbs label[for="tab1"] img {
+  border-color: white;
+}
+#tab1:checked ~ .descs .desc[data-tab="1"] {
+  display: block;
+}
+
+/* tab 2 */
+#tab2:checked ~ .big-images .big-img[data-tab="2"] {
+  opacity: 1;
+}
+#tab2:checked ~ .thumbs label[for="tab2"] {
+  opacity: 1;
+}
+#tab2:checked ~ .thumbs label[for="tab2"] img {
+  border-color: white;
+}
+#tab2:checked ~ .descs .desc[data-tab="2"] {
+  display: block;
+}
+
+/* tab 3 */
+#tab3:checked ~ .big-images .big-img[data-tab="3"] {
+  opacity: 1;
+}
+#tab3:checked ~ .thumbs label[for="tab3"] {
+  opacity: 1;
+}
+#tab3:checked ~ .thumbs label[for="tab3"] img {
+  border-color: white;
+}
+#tab3:checked ~ .descs .desc[data-tab="3"] {
+  display: block;
+}
+
+/* tab 4 */
+#tab4:checked ~ .big-images .big-img[data-tab="4"] {
+  opacity: 1;
+}
+#tab4:checked ~ .thumbs label[for="tab4"] {
+  opacity: 1;
+}
+#tab4:checked ~ .thumbs label[for="tab4"] img {
+  border-color: white;
+}
+#tab4:checked ~ .descs .desc[data-tab="4"] {
+  display: block;
+}
+
+/* tab 5 */
+#tab5:checked ~ .big-images .big-img[data-tab="5"] {
+  opacity: 1;
+}
+#tab5:checked ~ .thumbs label[for="tab5"] {
+  opacity: 1;
+}
+#tab5:checked ~ .thumbs label[for="tab5"] img {
+  border-color: white;
+}
+#tab5:checked ~ .descs .desc[data-tab="5"] {
+  display: block;
+}
