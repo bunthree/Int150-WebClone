@@ -1,137 +1,157 @@
 @import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Prompt:wght@400;900&display=swap");
+
+/* ============================================
+   GLOBAL VARIABLES & RESET
+   ============================================ */
+:root {
+  --color-dark: #1b1d1f;
+  --color-light: #f2f2f2;
+  --color-accent: #cdf564;
+  --color-muted: #ccc;
+  --container-max: 1400px;
+  --container-narrow: 1100px;
+  --font-thai: "Noto Sans TH", Tahoma, sans-serif;
+  --font-display: "Prompt", var(--font-thai);
+  --font-body: "Google Sans", var(--font-thai);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-/* Header-Section */
+body {
+  background-color: #f2f2f2;
+}
 
+/* ============================================
+   HEADER & NAVIGATION
+   ============================================ */
 header {
   position: fixed;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #111111;
-  height: 80px;
-  font-family: "Noto Sans TH", Tahoma, sans-serif;
-  font-weight: 600;
-  line-height: 120%;
-  letter-spacing: 0.08em;
-  font-size: 13px;
+  top: 0;
   width: 100%;
+  height: 80px;
+  background-color: #111;
   z-index: 100;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-thai);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.08em;
 }
-/* Nav-bar */
 
 nav {
+  width: 100%;
+  padding: 0 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  padding: 0 30px;
 }
+
 nav > ul {
+  width: 500px;
   display: flex;
   align-items: center;
-  list-style: none;
   justify-content: space-around;
-  width: 500px;
+  list-style: none;
 }
+
 nav ul li {
   position: relative;
 }
+
+nav ul li a {
+  padding: 7.5px 16px;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: 0.4s;
+}
+
+nav ul li a:hover {
+  background-color: #333;
+  color: var(--color-dark);
+}
+
+/* Underline animation on hover */
+.underline,
+.underline-COMPETITIVE {
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background: #1affce;
+  border-radius: 2px;
+}
+
+.underline {
+  bottom: -25px;
+}
+.underline-COMPETITIVE {
+  top: -5px;
+}
+
 nav ul li:hover .underline,
 nav ul li:hover .underline-COMPETITIVE {
   width: 100%;
 }
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  padding: 7.5px 16px;
-  border-radius: 10px;
-}
-nav ul li a:hover {
-  background-color: #333333;
-  color: #1f1d1f;
-  transition: 0.5s;
-}
-.underline {
-  position: absolute;
 
-  left: 0;
-  bottom: -25px;
-
-  width: 0%;
-  height: 4px;
-
-  border-radius: 2px;
-  background: #1affce;
-}
-.underline-COMPETITIVE {
-  position: absolute;
-
-  left: 0;
-  top: -5px;
-
-  width: 0%;
-  height: 4px;
-
-  border-radius: 2px;
-  background: #1affce;
-}
-
+/* Header right side */
 #header-menu-last {
   display: flex;
   justify-content: end;
 }
+
 #logo2xko {
   margin: 0 30px;
 }
+
 #sign-in {
   margin-left: 10px;
   background-color: #282828;
 }
+
 #globalicon {
+  padding: 7.5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 7.5px;
 }
+
+/* Riot logo with hover-swap */
 #Riotlogo {
   position: relative;
   width: 100px;
-  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 #Riotlogo img {
   position: absolute;
-  transition: opacity 0.3s;
 }
+
 #RiotlogoRed {
   opacity: 0;
 }
+
 #Riotlogo:hover #RiotlogoRed {
   opacity: 1;
 }
 #Riotlogo:hover #RiotlogoWhite {
   opacity: 0;
 }
-.nav-item {
-  position: relative;
-}
 
+/* Dropdown menu */
 .dropdown {
   display: none;
-
   position: absolute;
   top: 43px;
   left: 0;
-
   width: 200px;
   padding: 20px 0;
-
   background-color: #2b2b2b;
   list-style: none;
   z-index: 999;
@@ -141,18 +161,12 @@ nav ul li a:hover {
   display: block;
 }
 
-.dropdown li {
-  width: 100%;
-}
-
 .dropdown li a {
   display: block;
   padding: 14px 32px;
-
   color: #ccc;
   background: transparent;
   border-radius: 0;
-  text-decoration: none;
 }
 
 .dropdown li a:hover {
@@ -160,7 +174,9 @@ nav ul li a:hover {
   background-color: #3a3a3a;
 }
 
-/* Top-content Section */
+/* ============================================
+   HERO SECTION
+   ============================================ */
 .hero {
   position: relative;
   min-height: 600px;
@@ -168,15 +184,15 @@ nav ul li a:hover {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-
   justify-content: center;
   align-items: center;
 }
+
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, #1b1d1f 0%, transparent 100%) center
+  background: linear-gradient(to top, var(--color-dark), transparent) center
     bottom / 100% 50% no-repeat;
   z-index: 0;
   pointer-events: none;
@@ -184,8 +200,7 @@ nav ul li a:hover {
 
 .main-video {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -195,146 +210,145 @@ nav ul li a:hover {
 .top-content {
   position: relative;
   z-index: 1;
+  margin-bottom: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Noto Sans TH", Tahoma, sans-serif;
-  margin-bottom: 100px;
+  font-family: var(--font-thai);
 }
 
-.top-content h1 {
-  color: white;
-  font-family: "Prompt", "Noto Sans TH", Tahoma, sans-serif;
-  font-weight: 900;
-  font-style: normal;
-  font-size: 16px;
-  margin: 32px 0px 64px;
-}
 .top-content img {
   width: 368px;
   height: auto;
 }
+
+.top-content h1 {
+  margin: 32px 0 64px;
+  color: white;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 900;
+}
+
+/* CTA button (skewed) */
 .cta {
+  height: 64px;
+  padding: 0 24px;
   display: flex;
   align-items: center;
-  background-color: #1b1d1f;
+  background-color: var(--color-dark);
   color: white;
-  text-decoration: none;
-  height: 64px;
-  padding: 0px 24px;
-  font-weight: 400;
-  font-style: normal;
+  font-family: var(--font-body);
   font-size: 18px;
-  transform: skew(-15deg);
+  text-decoration: none;
   border: 4px solid white;
-
-  font-family:
-    Google Sans,
-    sans-serif;
+  transform: skew(-15deg);
+  transition: 0.5s;
 }
 
 .cta span {
   display: inline-block;
   transform: skew(15deg);
 }
+
 .cta:hover {
-  background-color: #cdf564;
+  background-color: var(--color-accent);
   color: #272b23;
-  transition: 0.5s;
 }
+
+/* Platform info at bottom of hero */
 .infoplatform {
   position: absolute;
+  bottom: 60px;
   z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 10;
-  color: white;
   gap: 20px;
+  color: white;
   text-align: center;
-  margin-top: auto;
-  bottom: 60px;
 }
+
 .infoplatform p {
-  font-size: 20px;
-  font-family:
-    Google Sans,
-    "Noto Sans TH",
-    Tahoma,
-    sans-serif;
-  font-weight: bold;
   width: 500px;
-  text-align: center;
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: bold;
 }
+
 .logoplatfrom {
+  margin-top: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 50px;
-  margin-top: 16px;
 }
+
 .logoplatfrom img {
   height: 32px;
   width: auto;
 }
+
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
 .about {
-  background-color: #1b1d1f;
   padding: 30px;
-}
-.about h2 {
-  font-family: "Prompt", "Noto Sans TH", Tahoma, sans-serif;
-  font-size: 48px;
-  text-align: center;
-  color: white;
+  background-color: var(--color-dark);
 }
 
-/*About Section*/
+.about h2 {
+  color: white;
+  font-family: var(--font-display);
+  font-size: 48px;
+  text-align: center;
+}
+
 .about-info {
-  max-width: 1400px;
+  max-width: var(--container-max);
   margin: 60px auto 0;
   display: flex;
-  box-sizing: border-box;
   gap: 40px;
   color: white;
-  font-family:
-    Google Sans,
-    "Noto Sans TH",
-    Tahoma,
-    sans-serif;
+  font-family: var(--font-body);
 }
+
 .detail {
   flex: 1;
   text-align: center;
-  color: white;
 }
+
 .detail img {
   width: 100%;
   height: auto;
   display: block;
 }
+
 .detail h3 {
+  margin: 24px 0 12px;
   font-size: 22px;
-  margin-top: 24px;
-  margin-bottom: 12px;
   font-weight: bold;
 }
+
 .detail p {
+  color: var(--color-muted);
   font-size: 16px;
   line-height: 1.6;
-  color: #ccc;
 }
-/* Trailer Section */
-.trailer {
-  background-color: #f5f5f5;
-  padding: 100px 30px;
-  color: #1b1d1f;
-  font-family: "Google Sans", "Noto Sans TH", Tahoma, sans-serif;
 
+/* ============================================
+   TRAILER SECTION
+   ============================================ */
+.trailer {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 100px 30px;
   display: flex;
   align-items: center;
   gap: 60px;
-  max-width: 1400px;
-  margin: 0 auto;
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  font-family: var(--font-body);
 }
 
 .trailer img {
@@ -352,16 +366,15 @@ nav ul li a:hover {
 }
 
 .trailer h3 {
+  font-family: var(--font-display);
   font-size: 20px;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-
-  font-family: "Prompt", "Noto Sans TH", Tahoma, sans-serif;
 }
 
 .trailer h1 {
-  font-family: "Prompt", "Noto Sans TH", Tahoma, sans-serif;
+  font-family: var(--font-display);
   font-size: 42px;
   font-weight: 900;
   line-height: 1.2;
@@ -373,118 +386,124 @@ nav ul li a:hover {
 }
 
 .trailer button {
-  align-self: flex-start; /* ไม่ให้ปุ่มยืดเต็มความกว้าง */
-  background-color: white;
-  color: #1b1d1f;
-  border: 4px solid #1b1d1f;
+  align-self: flex-start;
   padding: 16px 28px;
+  background-color: #f2f2f2;
+  color: var(--color-dark);
+  border: 4px solid var(--color-dark);
+  font-family: inherit;
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
   transform: skew(-13deg);
-  font-family: inherit;
+  transition: 0.5s;
 }
 
 .trailer button:hover {
-  background-color: #cdf564;
+  background-color: var(--color-accent);
   color: #272b23;
-  transition: 0.5s;
 }
-/* news-section*/
+
+/* ============================================
+   NEWS SECTION
+   ============================================ */
 .news {
-  background-color: white;
-  color: #1b1d1f;
   padding: 80px 30px;
-  font-family: "Google Sans", "Noto Sans TH", Tahoma, sans-serif;
+  color: var(--color-dark);
+  font-family: var(--font-body);
 }
-/* === Header bar === */
+
 .news-header {
-  max-width: 1400px;
-  margin: 0 auto 40px; /* ห่างจาก grid ด้านล่าง 40px */
+  max-width: var(--container-max);
+  margin: 0 auto 40px;
   display: flex;
-  justify-content: space-between; /* title ซ้าย, link ขวา */
+  justify-content: space-between;
   align-items: center;
 }
+
 .news-header h2 {
-  font-family: "Prompt", "Noto Sans TH", Tahoma, sans-serif;
+  font-family: var(--font-display);
   font-size: 24px;
   font-weight: 900;
 }
+
 .see-all {
-  color: #1b1d1f;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: bold;
-  letter-spacing: 0.05em;
   display: flex;
   align-items: center;
   gap: 8px;
-}
-.see-all:hover {
-  color: #5a5a5a;
+  color: var(--color-dark);
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-decoration: none;
   transition: 0.3s;
 }
-/* === Grid 3 คอลัมน์ === */
+
+.see-all:hover {
+  color: #5a5a5a;
+}
+
 .info-news {
-  max-width: 1400px;
+  max-width: var(--container-max);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 คอลัมน์ขนาดเท่ากัน */
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
-/* === การ์ดแต่ละใบ === */
+
 .new {
-  text-decoration: none;
-  color: #1b1d1f;
   display: flex;
   flex-direction: column;
   gap: 12px;
+  color: var(--color-dark);
+  text-decoration: none;
 }
-/* === ภาพ === */
+
 .new-image {
-  position: relative; /* ให้ play-icon อ้างอิงได้ */
-  overflow: hidden; /* รูปขยายตอน hover ไม่ล้น */
-  aspect-ratio: 16 / 9; /* คุมสัดส่วนภาพให้เท่ากันทุกใบ */
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
 }
+
 .new-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* เติมเต็มกรอบไม่บิด */
   display: block;
+  object-fit: cover;
   transition: transform 0.4s;
 }
+
 .new:hover .new-image img {
-  transform: scale(1.05); /* ซูมรูปนิดๆ ตอน hover */
+  transform: scale(1.05);
 }
-/* === Play button overlay === */
+
 .play-icon {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   width: 60px;
   height: 60px;
-  border-radius: 50%;
-  background: rgba(116, 116, 116, 0.6);
-  color: #ffffff;
-  border: 5px solid white;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: rgba(116, 116, 116, 0.6);
+  color: white;
+  border: 5px solid white;
+  border-radius: 50%;
   font-size: 20px;
-  pointer-events: none; /* คลิกทะลุไปยังการ์ด */
+  transform: translate(-50%, -50%);
+  pointer-events: none;
 }
-/* === Text === */
+
 .new .meta {
+  margin-top: 8px;
   font-size: 14px;
   font-weight: bold;
-  color: #1b1d1f;
-  margin-top: 8px;
 }
 
 .new .meta span {
   margin: 0 6px;
-  color: #555; /* เครื่องหมาย | สีจางลง */
+  color: #555;
 }
 
 .new h3 {
@@ -496,243 +515,101 @@ nav ul li a:hover {
 .new .desc {
   font-size: 16px;
   line-height: 1.5;
-  color: #1b1d1f;
 }
 
-/* ซ่อน radio inputs */
-.features-tabs input[type="radio"] {
-  display: none;
-}
-
-/* ซ่อนภาพใหญ่และข้อความทั้งหมดเป็นค่าเริ่มต้น */
-.big-img,
-.desc {
-  display: none;
-}
-
-/* แสดงเฉพาะตัวที่ตรงกับ radio ที่ถูกเลือก */
-#tab1:checked ~ .big-images .big-img[data-tab="1"],
-#tab1:checked ~ .descs .desc[data-tab="1"] {
-  display: block;
-}
-#tab2:checked ~ .big-images .big-img[data-tab="2"],
-#tab2:checked ~ .descs .desc[data-tab="2"] {
-  display: block;
-}
-#tab3:checked ~ .big-images .big-img[data-tab="3"],
-#tab3:checked ~ .descs .desc[data-tab="3"] {
-  display: block;
-}
-#tab4:checked ~ .big-images .big-img[data-tab="4"],
-#tab4:checked ~ .descs .desc[data-tab="4"] {
-  display: block;
-}
-#tab5:checked ~ .big-images .big-img[data-tab="5"],
-#tab5:checked ~ .descs .desc[data-tab="5"] {
-  display: block;
-}
-
-/* Layout */
-.thumbs {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-}
-
-.thumbs label {
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-
-.thumbs label img {
-  width: 200px;
-  aspect-ratio: 16/9;
-  object-fit: cover;
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-}
-/* ===== Features Section ===== */
+/* ============================================
+   FEATURES SECTION (static mockup)
+   ============================================ */
 .features {
-  background-color: white;
-  color: #1b1d1f;
   padding: 80px 30px;
-  font-family: "Google Sans", "Noto Sans TH", Tahoma, sans-serif;
+  color: var(--color-dark);
+  font-family: var(--font-body);
 }
 
 .features > h3 {
-  max-width: 1400px;
+  max-width: var(--container-max);
   margin: 0 auto 40px;
-  font-family: "Prompt", "Noto Sans TH", Tahoma, sans-serif;
+  font-family: var(--font-display);
   font-size: 24px;
   font-weight: 900;
 }
 
 .features-tabs {
-  max-width: 1400px;
+  max-width: var(--container-max);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 
-/* ซ่อน radio inputs */
-.features-tabs input[type="radio"] {
-  display: none;
-}
-
-/* === Big image (ภาพใหญ่ด้านบน) === */
-.big-images {
-  position: relative;
+/* Big image */
+.big-image {
   width: 100%;
-  aspect-ratio: 16 / 9; /* คุมสัดส่วนภาพ */
+  aspect-ratio: 16 / 9;
   overflow: hidden;
 }
 
-.big-img {
-  position: absolute; /* วางทับกัน → จะเปลี่ยนเฉพาะตัวที่ active */
-  top: 0;
-  left: 0;
+.big-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0; /* ซ่อนทุกตัวเป็นค่าเริ่มต้น */
-  transition: opacity 0.4s;
 }
 
-/* === Thumbs (รูปย่อด้านล่าง) === */
+/* Thumbnails row */
 .thumbs {
-  display: flex;
-  justify-content: center; /* จัดกลางแนวนอน */
-  gap: 20px;
-
-  max-width: 1100px; /* ← เพิ่ม: แคบกว่า big-image */
+  max-width: var(--container-narrow);
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-.thumbs label {
-  cursor: pointer;
+.thumb {
+  flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 12px;
-  flex: 1; /* ← เปลี่ยนจาก width: 200px เป็น flex: 1 */
   opacity: 0.5;
-  transition: opacity 0.3s;
 }
 
-.thumbs label:hover {
-  opacity: 0.8;
+.thumb.active {
+  opacity: 1;
 }
 
-.thumbs label img {
+.thumb img {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
   border: 2px solid transparent;
-  transition: border-color 0.3s;
 }
 
-.thumbs label span {
+.thumb.active img {
+  border-color: var(--color-dark);
+}
+
+.thumb span {
   font-size: 14px;
-  text-align: center;
   font-weight: bold;
+  text-align: center;
 }
 
-/* === Description (ข้อความใต้รูป) === */
+/* Description */
 .descs {
-  margin-top: 20px;
-  padding-top: 30px;
-  border-top: 1px solid #333; /* เส้นคั่นเหมือนต้นฉบับ */
+  max-width: var(--container-narrow);
   margin: 20px auto 0;
-  max-width: 1100px;
+  padding-top: 30px;
+  border-top: 1px solid #ddd;
 }
 
-.desc {
-  display: none; /* ซ่อนทุกตัวเป็นค่าเริ่มต้น */
-}
-
-.desc h4 {
+.descs h4 {
+  margin-bottom: 12px;
   font-size: 22px;
   font-weight: bold;
-  margin-bottom: 12px;
 }
 
-.desc p {
+.descs p {
   font-size: 16px;
   line-height: 1.7;
-  color: #1b1d1f;
-}
-
-/* ===== State: เมื่อ radio ถูกเลือก ===== */
-/* tab 1 */
-#tab1:checked ~ .big-images .big-img[data-tab="1"] {
-  opacity: 1;
-}
-#tab1:checked ~ .thumbs label[for="tab1"] {
-  opacity: 1;
-}
-#tab1:checked ~ .thumbs label[for="tab1"] img {
-  border-color: white;
-}
-#tab1:checked ~ .descs .desc[data-tab="1"] {
-  display: block;
-}
-
-/* tab 2 */
-#tab2:checked ~ .big-images .big-img[data-tab="2"] {
-  opacity: 1;
-}
-#tab2:checked ~ .thumbs label[for="tab2"] {
-  opacity: 1;
-}
-#tab2:checked ~ .thumbs label[for="tab2"] img {
-  border-color: white;
-}
-#tab2:checked ~ .descs .desc[data-tab="2"] {
-  display: block;
-}
-
-/* tab 3 */
-#tab3:checked ~ .big-images .big-img[data-tab="3"] {
-  opacity: 1;
-}
-#tab3:checked ~ .thumbs label[for="tab3"] {
-  opacity: 1;
-}
-#tab3:checked ~ .thumbs label[for="tab3"] img {
-  border-color: white;
-}
-#tab3:checked ~ .descs .desc[data-tab="3"] {
-  display: block;
-}
-
-/* tab 4 */
-#tab4:checked ~ .big-images .big-img[data-tab="4"] {
-  opacity: 1;
-}
-#tab4:checked ~ .thumbs label[for="tab4"] {
-  opacity: 1;
-}
-#tab4:checked ~ .thumbs label[for="tab4"] img {
-  border-color: white;
-}
-#tab4:checked ~ .descs .desc[data-tab="4"] {
-  display: block;
-}
-
-/* tab 5 */
-#tab5:checked ~ .big-images .big-img[data-tab="5"] {
-  opacity: 1;
-}
-#tab5:checked ~ .thumbs label[for="tab5"] {
-  opacity: 1;
-}
-#tab5:checked ~ .thumbs label[for="tab5"] img {
-  border-color: white;
-}
-#tab5:checked ~ .descs .desc[data-tab="5"] {
-  display: block;
 }

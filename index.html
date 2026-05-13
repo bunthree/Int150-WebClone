@@ -135,7 +135,7 @@
       </div>
     </section>
     <img src="images/trailer/Border.png" alt="border" id="border-trailer" />
-    <secton class="trailer">
+    <section class="trailer">
       <img src="images/trailer/Akali.png" alt="Akali" />
       <div>
         <h3>ปล่อยตัวแล้ว</h3>
@@ -147,7 +147,7 @@
         </p>
         <button>รับชมเลย</button>
       </div>
-    </secton>
+    </section>
     <section class="news">
       <div class="news-header">
         <h2>ข่าวสารที่น่าสนใจ</h2>
@@ -198,103 +198,43 @@
       <h3>ฟีเจอร์</h3>
 
       <div class="features-tabs">
-        <!-- 5 radio inputs (ซ่อน) -->
-        <input type="radio" name="tab" id="tab1" checked />
-        <input type="radio" name="tab" id="tab2" />
-        <input type="radio" name="tab" id="tab3" />
-        <input type="radio" name="tab" id="tab4" />
-        <input type="radio" name="tab" id="tab5" />
-
-        <!-- รูปใหญ่ของแต่ละ tab -->
-        <div class="big-images">
-          <img
-            src="images/features/Battle2V2.avif"
-            class="big-img"
-            data-tab="1"
-          />
-          <img src="images/features/Fuse.avif" class="big-img" data-tab="2" />
-          <img src="images/features/lobby.avif" class="big-img" data-tab="3" />
-          <img
-            src="images/features/Freetoplay.avif"
-            class="big-img"
-            data-tab="4"
-          />
-          <img
-            src="images/features/integity.avif"
-            class="big-img"
-            data-tab="5"
-          />
+        <!-- ภาพใหญ่ (แสดงเฉพาะ tab ที่ active) -->
+        <div class="big-image">
+          <img src="images/features/Battle2V2.avif" alt="ระบบต่อสู้ 2v2" />
         </div>
 
-        <!-- ปุ่ม thumbnails -->
+        <!-- Thumbnail mockup (ไม่ทำงาน คลิกไม่ได้) -->
         <div class="thumbs">
-          <label for="tab1"
-            ><img src="images/features/Battle2V2.avif" /><span
-              >ระบบต่อสู้ 2v2</span
-            ></label
-          >
-          <label for="tab2"
-            ><img src="images/features/Fuse.avif" /><span>FUSE</span></label
-          >
-          <label for="tab3"
-            ><img src="images/features/lobby.avif" /><span>ล็อบบี้</span></label
-          >
-          <label for="tab4"
-            ><img src="images/features/Freetoplay.avif" /><span
-              >เล่นได้ฟรี</span
-            ></label
-          >
-          <label for="tab5"
-            ><img src="images/features/integity.avif" /><span
-              >ความโปร่งใสของการแข่งขัน</span
-            ></label
-          >
+          <div class="thumb active">
+            <img src="images/features/Battle2V2.avif" alt="" />
+            <span>ระบบต่อสู้ 2v2</span>
+          </div>
+          <div class="thumb">
+            <img src="images/features/Fuse.avif" alt="" />
+            <span>FUSE</span>
+          </div>
+          <div class="thumb">
+            <img src="images/features/lobby.avif" alt="" />
+            <span>ล็อบบี้</span>
+          </div>
+          <div class="thumb">
+            <img src="images/features/Freetoplay.avif" alt="" />
+            <span>เล่นได้ฟรี</span>
+          </div>
+          <div class="thumb">
+            <img src="images/features/integity.avif" alt="" />
+            <span>ความโปร่งใสของการแข่งขัน</span>
+          </div>
         </div>
 
-        <!-- ข้อความใต้ภาพ -->
+        <!-- คำอธิบายของ tab ที่ active -->
         <div class="descs">
-          <div class="desc" data-tab="1">
-            <h4>ระบบต่อสู้ 2v2</h4>
-            <p>
-              2XKO คือเกมต่อสู้ 2v2
-              ที่ซึ่งทีมเวิร์คชั้นยอดคือตัวตัดสินระหว่างชัยชนะและความพ่ายแพ้
-              ฝึกฝนกลไกแท็กและแอสซิสสุดพิเศษให้เชี่ยวชาญเพื่อชิงชัยเหนือคู่หูศัตรูและคว้าจุดสูงสุดมาให้จงได้
-            </p>
-          </div>
-          <div class="desc" data-tab="2">
-            <h4>FUSE</h4>
-            <p>
-              Fuse คือระบบเสริมสไตล์การเล่นแสนทรงพลัง
-              ซึ่งสามารถเปลี่ยนกฎการเล่นของทีมคุณได้เลย
-              ไม่ว่าคุณจะเป็นนักสู้แท็กมือใหม่หรือผู้เข้าแข่งขันเจนสนาม เราก็มี
-              Fuse เตรียมไว้ให้อย่างแน่นอน
-            </p>
-          </div>
-          <div class="desc" data-tab="3">
-            <h4>ล็อบบี้</h4>
-            <p>
-              ก้าวเข้าสู่ตู้เกมเสมือนที่ซึ่งคู่หูคนต่อไป
-              หรือไม่ก็คู่ปรับกำลังรอคุณอยู่ ล็อบบี้เกมจัดอันดับ เกมทั่วไป
-              และเกมส่วนตัวเปิดโอกาสให้คุณได้เล่นในแบบของตัวเอง
-              ไม่ว่าจะอยากแข่งขัน รับชม หรือแค่อยากรัวปุ่มให้มันส์ไปข้าง
-            </p>
-          </div>
-          <div class="desc" data-tab="4">
-            <h4>เล่นได้ฟรี</h4>
-            <p>
-              ปลดล็อกแชมเปี้ยนใหม่ รับแชมเปี้ยนมาสเตอรี่
-              และปลดล็อกของรางวัลแบทเทิลพาสแบบฟรี ๆ คุณสามารถแลก Coin
-              เพื่อรับไอเทมเพิ่มเติมได้ แต่ไม่จำเป็นต้องเสียเงินเพื่อที่จะเล่น
-              2XKO
-            </p>
-          </div>
-          <div class="desc" data-tab="5">
-            <h4>ความโปร่งใส</h4>
-            <p>
-              2XKO มาพร้อมกับเน็ตโค้ดและระบบป้องกันการโกงขั้นสูงสุด
-              เพื่อส่งมอบเกมเพลย์ที่ทั้งยุติธรรมและไร้ซึ่งปัญหาแลคในทุกครั้งที่คุณเข้าคิว
-            </p>
-          </div>
+          <h4>ระบบต่อสู้ 2v2</h4>
+          <p>
+            2XKO คือเกมต่อสู้ 2v2
+            ที่ซึ่งทีมเวิร์คชั้นยอดคือตัวตัดสินระหว่างชัยชนะและความพ่ายแพ้
+            ฝึกฝนกลไกแท็กและแอสซิสสุดพิเศษให้เชี่ยวชาญเพื่อชิงชัยเหนือคู่หูศัตรูและคว้าจุดสูงสุดมาให้จงได้
+          </p>
         </div>
       </div>
     </section>
