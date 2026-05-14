@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Prompt:wght@400;900&display=swap");
+@import url("./base.css");
+@import url("./header.css");
+@import url("./hero.css");
+@import url("./about.css");
+@import url("./trailer.css");
+@import url("./news.css");
+@import url("./features.css");
+@import url("./champion.css");
+@import url("./responsive.css");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-background);
+}
+
+html,
+body {
+  overflow-x: hidden;
+}

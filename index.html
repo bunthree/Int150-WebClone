@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
     <title>
       2XKO | เกมต่อสู้ 2V2 เล่นฟรีพร้อมแชมแปี้ยน จาก League of Legends
     </title>
@@ -61,6 +61,9 @@
             /></a>
           </li>
           <li><a href="#" id="sign-in">ลงชื่อใช้</a></li>
+          <li>
+            <button class="hamburger" >☰</button>
+          </li>
         </ul>
       </nav>
     </header>
@@ -99,7 +102,7 @@
     <section class="about">
       <h2>เกี่ยวกับ 2XKO</h2>
       <div class="about-info">
-        <div class="detail">
+        <div class="detail" id="detail-1">
           <img src="/images/About/first-1920x1080.avif" alt="" />
           <div>
             <h3>เล่นกับคู่หู</h3>
@@ -111,7 +114,7 @@
             </p>
           </div>
         </div>
-        <div class="detail">
+        <div class="detail" id="detail-2">
           <img src="/images/About/Second-1920x1080.avif" alt="" />
           <div>
             <h3>นักสู้ในตำนาน</h3>
@@ -122,7 +125,7 @@
             </p>
           </div>
         </div>
-        <div class="detail">
+        <div class="detail" id="detail-3">
           <img src="/images/About/third-1920x1080.avif" alt="" />
           <div>
             <h3>กระดานอันดับ</h3>
@@ -134,10 +137,16 @@
         </div>
       </div>
     </section>
+    <div class="divider"id="about-divider">
+  <div class="divider-line" ></div>
+  <div class="divider-arrow"><img src="images/carousel-left.svg" />
+  <img src="images/carousel-right.svg"  /></div>
+  
+</div>
     <img src="images/trailer/Border.png" alt="border" id="border-trailer" />
     <section class="trailer">
       <img src="images/trailer/Akali.png" alt="Akali" />
-      <div>
+      <div id="trailer-text">
         <h3>ปล่อยตัวแล้ว</h3>
         <h1>ตัวอย่างเผยโฉมเกมเพลย์ Akali</h1>
         <p>
@@ -154,7 +163,7 @@
         <a href="#" class="see-all">ดูทั้งหมด <span>↗</span></a>
       </div>
       <div class="info-news">
-        <a href="#" class="new">
+        <a href="#" class="new" id="new-1">
           <!-- เปลี่ยน div → a (การ์ดทั้งใบคลิกได้) -->
           <div class="new-image">
             <img src="images/news/DaruisRun.avif" alt="" />
@@ -168,7 +177,7 @@
             ในแบบที่ไม่เคยมาก่อน วันที่ 12 พฤษภาคมนี้เลย
           </p>
         </a>
-        <a href="#" class="new">
+        <a href="#" class="new" id="new-2">
           <div class="new-image">
             <img src="images/news/Akali.avif" alt="" />
             <div class="play-icon">▶</div>
@@ -181,7 +190,7 @@
           </p>
         </a>
 
-        <a href="#" class="new">
+        <a href="#" class="new" id="new-3">
           <div class="new-image">
             <img src="images/news/Evo.avif" alt="" />
           </div>
@@ -194,6 +203,12 @@
         </a>
       </div>
     </section>
+    <div class="divider" >
+  <div class="divider-line" id="news-divider"></div>
+  <div class="divider-arrow" id="news-divider-arrow"><div class="leftsvg"></div><div class="rightsvg"></div>
+  </div>
+  
+</div>
     <section class="features">
       <h3>ฟีเจอร์</h3>
 
@@ -206,24 +221,24 @@
         <!-- Thumbnail mockup (ไม่ทำงาน คลิกไม่ได้) -->
         <div class="thumbs">
           <div class="thumb active">
-            <img src="images/features/Battle2V2.avif" alt="" />
-            <span>ระบบต่อสู้ 2v2</span>
+            <a href=""><img src="images/features/Battle2V2.avif" alt="" /></a>
+            <p>ระบบต่อสู้ 2v2</p>
           </div>
           <div class="thumb">
-            <img src="images/features/Fuse.avif" alt="" />
-            <span>FUSE</span>
+            <a href=""><img src="images/features/Fuse.avif" alt="" /></a>
+            <p>FUSE</p>
           </div>
           <div class="thumb">
-            <img src="images/features/lobby.avif" alt="" />
-            <span>ล็อบบี้</span>
+            <a href=""><img src="images/features/lobby.avif" alt="" /></a>
+              <p>ล็อบบี้</p>
           </div>
           <div class="thumb">
-            <img src="images/features/Freetoplay.avif" alt="" />
-            <span>เล่นได้ฟรี</span>
+            <a href=""> <img src="images/features/Freetoplay.avif" alt="" /></a>
+              <p>เล่นได้ฟรี</p>
           </div>
           <div class="thumb">
-            <img src="images/features/integity.avif" alt="" />
-            <span>ความโปร่งใสของการแข่งขัน</span>
+            <a href=""><img src="images/features/integity.avif" alt="" /></a>
+              <p>ความโปร่งใสของการแข่งขัน</p>
           </div>
         </div>
 
@@ -236,6 +251,36 @@
             ฝึกฝนกลไกแท็กและแอสซิสสุดพิเศษให้เชี่ยวชาญเพื่อชิงชัยเหนือคู่หูศัตรูและคว้าจุดสูงสุดมาให้จงได้
           </p>
         </div>
+      </div>
+    </section>
+    <section class="champion">
+      <div class="champion-content">
+        <h2>เลือกแชมเปี้ยนของคุณ</h2>
+        <p>
+          เข้าไปดูรายชื่อ ท่า ประวัติ และรายละเอียดอื่น ๆ
+          ของแชมเปี้ยนแต่ละตัวได้เลย
+        </p>
+        <div class="champion-buttons">
+          <a href="#">เรียนรู้เกี่ยวกับ AKALI</a>
+          <a href="#">ดูแชมเปี้ยนทั้งหมด</a>
+        </div>
+        <div class="champion-list">
+      <div class="champion-item active">
+        <img src="images/champion/Akali-small.avif" alt="Akali">
+        <span>AKALI</span>
+      </div>
+
+      <div class="champion-item">
+        <img src="images/champion/Cait-small.avif" alt="Caitlyn">
+        <span>CAITLYN</span>
+      </div>
+
+      <div class="champion-item">
+        <img src="images/champion/Warwick-small.avif" alt="Warwick">
+        <span>WARWICK</span>
+      </div>
+      <div class="champion-preview">
+        <img src="images/Champion/Akali.avif" alt="champion icon" />
       </div>
     </section>
   </body>

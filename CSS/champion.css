@@ -1,0 +1,45 @@
+.champion {
+  background-image: url("/images/Champion/background.avif");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 80px;
+  padding: 100px 30px;
+  background-color: #f2f2f2;
+}
+
+.champion-content {
+  flex: 1;
+  max-width: 700px;
+  text-align: center;
+}
+
+.champion-preview {
+  flex: 1;
+  max-width: 520px;
+}
+
+.champion-preview img {
+  width: 100%;
+  display: block;
+}
+
+.champion-list {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  margin-top: 50px;
+}
+
+.champion-item img {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+}
+
+.champion-item span {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+}

@@ -1,0 +1,37 @@
+:root {
+  --color-black: #1b1d1f;
+  --color-background: #f2f2f2;
+  --color-cta: #cdf564;
+  --color-gray: #ccc;
+  --container-max: 1400px;
+  --container-thumb: 1100px;
+  --font-topic: "Noto Sans TH", Tahoma, sans-serif;
+  --font-display: "Prompt", var(--font-topic);
+  --font-body: "Google Sans", var(--font-topic);
+}
+.divider {
+  padding: 32px 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: space-around;
+}
+
+.divider-line {
+  flex: 0.9;
+  height: 1px;
+  background-color: #ccc;
+}
+
+.divider-arrow {
+  height: 20px;
+  width: auto;
+  flex-shrink: 0; /* ห้ามรูปหด */
+  display: flex;
+  gap: 15px;
+}
+@media (min-width: 1025px) {
+  .divider {
+    display: none;
+  }
+}

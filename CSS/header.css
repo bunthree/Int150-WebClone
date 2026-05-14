@@ -1,0 +1,223 @@
+/* ===== Header & Nav ===== */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #111;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-topic);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  padding: 16px;
+  height: 80px;
+}
+
+nav {
+  width: 100%;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav > ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 8px;
+}
+
+nav > ul:first-of-type > li {
+  display: none;
+}
+
+#sign-in {
+  display: none;
+}
+
+.hamburger {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #282828;
+  border-radius: 15px;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#header-menu-last {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+#logo2xko {
+  margin: 0 12px;
+}
+
+#logo2xko img {
+  width: 40px;
+}
+
+#globalicon {
+  padding: 7.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#globalicon img {
+  width: 25px;
+  height: auto;
+}
+#Riotlogo {
+  position: relative;
+  width: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30px;
+}
+
+#Riotlogo img {
+  position: absolute;
+  width: 95px;
+  height: auto;
+}
+
+#RiotlogoRed {
+  opacity: 0;
+}
+
+#Riotlogo:hover #RiotlogoRed {
+  opacity: 1;
+}
+
+#Riotlogo:hover #RiotlogoWhite {
+  opacity: 0;
+}
+
+.underline,
+.underline-COMPETITIVE {
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background: #1affce;
+  border-radius: 2px;
+}
+
+.underline {
+  bottom: -25px;
+}
+
+.underline-COMPETITIVE {
+  top: -5px;
+}
+
+.dropdown {
+  display: none;
+}
+
+@media (min-width: 1025px) {
+  /* ===== Header & Nav ===== */
+  header {
+    height: 80px;
+  }
+
+  nav {
+    padding: 0 30px;
+  }
+
+  nav > ul:first-of-type {
+    width: 500px;
+    justify-content: space-around;
+    gap: 0;
+  }
+
+  nav > ul:first-of-type > li {
+    display: block;
+    position: relative;
+  }
+
+  nav ul li a {
+    padding: 7.5px 16px;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: 0.4s;
+  }
+
+  nav ul li a:hover {
+    background-color: #333;
+    color: var(--color-black);
+  }
+
+  nav ul li:hover .underline,
+  nav ul li:hover .underline-COMPETITIVE {
+    width: 100%;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  #sign-in {
+    display: block;
+    margin-left: 10px;
+    background-color: #282828;
+  }
+
+  #logo2xko {
+    margin: 0 30px;
+  }
+
+  #logo2xko img {
+    width: 30px;
+  }
+
+  #Riotlogo {
+    width: 100px;
+  }
+
+  #Riotlogo img {
+    width: 85px;
+  }
+
+  /* Dropdown menu */
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 43px;
+    left: 0;
+    width: 200px;
+    padding: 20px 0;
+    background-color: #2b2b2b;
+    list-style: none;
+    z-index: 999;
+  }
+
+  .nav-item:hover .dropdown {
+    display: block;
+  }
+
+  .dropdown li a {
+    display: block;
+    padding: 14px 32px;
+    color: #ccc;
+    background: transparent;
+    border-radius: 0;
+  }
+
+  .dropdown li a:hover {
+    color: white;
+    background-color: #3a3a3a;
+  }
+}
