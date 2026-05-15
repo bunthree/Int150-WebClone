@@ -99,9 +99,23 @@
   line-height: 1.6;
 }
 
-/* ============================================
-   DESKTOP STYLES
-   ============================================ */
+@media (min-width: 600px) {
+  .features > h3 {
+    font-size: 20px;
+  }
+  .descs h4 {
+    font-size: 18px;
+  }
+  .thumb span {
+    font-size: 12px;
+  }
+  .descs p {
+    font-size: 16px;
+  }
+  .thumb p {
+    font-size: 12px;
+  }
+}
 @media (min-width: 1025px) {
   .features {
     padding: 80px 30px;
@@ -129,6 +143,9 @@
   }
 
   .thumb span {
+    font-size: 14px;
+  }
+  .thumb p {
     font-size: 14px;
   }
 

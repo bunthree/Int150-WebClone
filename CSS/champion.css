@@ -1,29 +1,30 @@
 .champion {
-  background-image: url('/images/Champion/background.avif');
+  background-image: url("/images/Champion/background.avif");
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 80px;
+
   padding: 100px 30px;
   background-color: #f2f2f2;
   box-sizing: border-box;
   width: 100%;
   max-width: 100%;
   overflow: hidden;
+  border-top: 1px solid var(--color-gray);
 }
 
 .champion-content {
   flex: 1;
   width: 100%;
-  max-width: 700px;
+
   text-align: center;
 }
 .champion-content h2 {
   font-family: var(--font-display);
   font-size: 32px;
-  word-wrap: break-word;
 }
 .champion-content p {
   font-family: var(--font-body);
@@ -33,7 +34,6 @@
 .champion-preview {
   flex: 1;
   width: 100%;
-  max-width: 520px;
 }
 
 .champion-preview img {
@@ -45,13 +45,22 @@
   display: flex;
   justify-content: center;
   gap: 35px;
-  margin-top: 50px;
+  margin-top: 30px;
+}
+.champion-item {
+  flex: 1;
+  min-width: 0;
+  opacity: 0.5;
+}
+.champion-item-active {
+  opacity: 1;
 }
 
 .champion-item img {
-  width: 96px;
-  height: 96px;
+  width: 100%;
+  height: auto;
   object-fit: cover;
+  display: block;
 }
 
 .champion-item p {
@@ -61,11 +70,15 @@
   font-size: 10px;
   font-weight: bold;
 }
+#champion-item5,
+#champion-item6,
+#champion-item7 {
+  display: none;
+}
 .champion-buttons {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 100%;
   margin-top: 30px;
 }
 .champion-buttons button {
@@ -80,10 +93,77 @@
   font-weight: bold;
   transform: skew(-13deg);
   transition: 0.5s;
-  background-color: transparent;
-  cursor: pointer;
-  box-sizing: border-box;
 }
 .champion-buttons button:hover {
   background-color: var(--color-cta);
+}
+@media (min-width: 460px) {
+  #champion-item5 {
+    display: block;
+  }
+}
+@media (min-width: 600px) {
+  .champion-buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .champion-buttons button {
+    width: 200px;
+  }
+  .champion-content h2 {
+    font-size: 40px;
+  }
+  .champion-content p {
+    font-size: 16px;
+  }
+}
+@media (min-width: 640px) {
+  #champion-item6 {
+    display: block;
+  }
+}
+@media (min-width: 769px) {
+  #champion-item7 {
+    display: block;
+  }
+}
+@media (min-width: 1025px) {
+  .champion {
+    padding: 80px 60px;
+    gap: 50px;
+    flex-direction: row;
+  }
+  .champion-content {
+    flex: 0 0 800px; /* ลดเหลือ 600px ให้ pod ในจอ 1025 ได้ */
+    width: auto;
+  }
+  .champion-preview {
+    flex: 1;
+    width: auto;
+    min-width: 0; /* ให้หดได้ตามที่ว่างที่เหลือ */
+    max-width: 670px;
+  }
+  .champion-item img {
+    max-width: 100px; /* ภาพ champion ใน list ไม่ใหญ่เกิน */
+    margin: 0 auto;
+  }
+  #champion-divider {
+    display: flex;
+  }
+  #champion-item5,
+  #champion-item6,
+  #champion-item7 {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  #champion-item5 {
+    display: block;
+  }
+}
+@media (min-width: 1440px) {
+  #champion-item6 {
+    display: block;
+  }
 }

@@ -32,6 +32,6 @@
 }
 @media (min-width: 1025px) {
   .divider {
-    display: none;
+    display: flex;
   }
 }
