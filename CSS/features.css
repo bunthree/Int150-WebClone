@@ -85,7 +85,7 @@
   max-width: var(--container-thumb);
   margin: 16px auto 0;
   padding-top: 20px;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid var(--color-black);
 }
 
 .descs h4 {
